@@ -23,7 +23,7 @@ app.use(expressLayouts)
 app.set("layout", "./layouts/layout") // not at views root
 
 
-app.use(static)
+app.use(express.static("public"))
 // index route
 app.get("/", function(req, res) {
   res.render("index", { title: "Home" })
@@ -42,3 +42,4 @@ const host = process.env.HOST
 app.listen(port, () => {
   console.log(`app listening on ${host}:${port}`)
 })
+
